@@ -5,19 +5,21 @@ import stainedGlass from '@/assets/stained-glass.jpg';
 import hallway from '@/assets/castle-hallway.jpg';
 import library from '@/assets/castle-library.jpg';
 
-const carouselImages = [stainedGlass, hallway, library];
+const carouselImages = [stainedGlass, hallway, library, stainedGlass];
 
 const HeroSection = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(true);
+  const [titleScale, setTitleScale] = useState(1.5);
 
+  // Animate title from large to normal on mount
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsAnimating(false);
-    }, 800);
+      setTitleScale(1);
+    }, 100);
     return () => clearTimeout(timer);
   }, []);
 
+  // Auto-rotate carousel
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % carouselImages.length);
@@ -35,44 +37,51 @@ const HeroSection = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      {/* Background Image with Parallax */}
+      {/* Background Image */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url(${heroImage})`,
-          transform: 'scale(1.1)'
-        }}
+        style={{ backgroundImage: `url(${heroImage})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </div>
 
       {/* Decorative Borders */}
-      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24">
-        <div className="h-full w-full opacity-60" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'1000\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M50 0 Q30 50 50 100 T50 200 T50 300 T50 400 T50 500 T50 600 T50 700 T50 800 T50 900 T50 1000\' stroke=\'%23C5B896\' fill=\'none\' stroke-width=\'2\'/%3E%3Ccircle cx=\'50\' cy=\'100\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'300\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'500\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'700\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'900\' r=\'4\' fill=\'%23C5B896\'/%3E%3C/svg%3E")',
-          backgroundRepeat: 'repeat-y',
-          backgroundSize: 'contain'
-        }} />
+      <div className="absolute left-0 top-0 bottom-0 w-16 md:w-24 opacity-60">
+        <svg className="h-full w-full" viewBox="0 0 100 1000" preserveAspectRatio="none">
+          <path d="M50 0 Q30 50 50 100 T50 200 T50 300 T50 400 T50 500 T50 600 T50 700 T50 800 T50 900 T50 1000" 
+                stroke="#C5B896" fill="none" strokeWidth="2"/>
+          <circle cx="50" cy="100" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="300" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="500" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="700" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="900" r="4" fill="#C5B896"/>
+        </svg>
       </div>
-      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24">
-        <div className="h-full w-full opacity-60" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'100\' height=\'1000\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M50 0 Q70 50 50 100 T50 200 T50 300 T50 400 T50 500 T50 600 T50 700 T50 800 T50 900 T50 1000\' stroke=\'%23C5B896\' fill=\'none\' stroke-width=\'2\'/%3E%3Ccircle cx=\'50\' cy=\'100\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'300\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'500\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'700\' r=\'4\' fill=\'%23C5B896\'/%3E%3Ccircle cx=\'50\' cy=\'900\' r=\'4\' fill=\'%23C5B896\'/%3E%3C/svg%3E")',
-          backgroundRepeat: 'repeat-y',
-          backgroundSize: 'contain'
-        }} />
+      <div className="absolute right-0 top-0 bottom-0 w-16 md:w-24 opacity-60">
+        <svg className="h-full w-full" viewBox="0 0 100 1000" preserveAspectRatio="none">
+          <path d="M50 0 Q70 50 50 100 T50 200 T50 300 T50 400 T50 500 T50 600 T50 700 T50 800 T50 900 T50 1000" 
+                stroke="#C5B896" fill="none" strokeWidth="2"/>
+          <circle cx="50" cy="100" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="300" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="500" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="700" r="4" fill="#C5B896"/>
+          <circle cx="50" cy="900" r="4" fill="#C5B896"/>
+        </svg>
       </div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-8 text-center">
         <h1 
-          className={`font-display font-light text-gold text-4xl md:text-6xl lg:text-8xl mb-6 max-w-5xl leading-tight tracking-wide transition-all duration-800 ${
-            isAnimating ? 'scale-150 opacity-0' : 'scale-100 opacity-100'
-          }`}
-          style={{ letterSpacing: '0.05em' }}
+          className="font-display font-light text-gold mb-6 max-w-5xl leading-[1.1] tracking-[0.05em] transition-all duration-[800ms] ease-out"
+          style={{ 
+            fontSize: titleScale === 1.5 ? 'clamp(3rem, 10vw, 10rem)' : 'clamp(3rem, 8vw, 6.5rem)',
+            transform: `scale(${titleScale})`,
+            transformOrigin: 'center'
+          }}
         >
           A FORTRESS OF LEGENDS, HISTORY & MYSTERY
         </h1>
-        <p className="text-primary-foreground text-lg md:text-xl max-w-3xl font-body font-light leading-relaxed">
+        <p className="text-primary-foreground text-base md:text-lg max-w-3xl font-body font-light leading-relaxed">
           Discover how knights, nobles, and servants lived within the castle's towering walls during its golden age. We welcome you to step back in time.
         </p>
       </div>
@@ -82,6 +91,7 @@ const HeroSection = () => {
         <button 
           onClick={prevImage}
           className="p-2 rounded-full border-2 border-gold/50 bg-black/30 hover:bg-black/50 transition-all backdrop-blur-sm"
+          aria-label="Previous image"
         >
           <ChevronLeft className="h-6 w-6 text-gold" />
         </button>
@@ -90,7 +100,7 @@ const HeroSection = () => {
           {carouselImages.map((img, index) => (
             <div
               key={index}
-              className={`relative w-24 h-24 md:w-32 md:h-32 rounded overflow-hidden border-4 transition-all duration-300 cursor-pointer ${
+              className={`relative w-20 h-20 md:w-28 md:h-28 overflow-hidden border-4 transition-all duration-500 cursor-pointer ${
                 index === currentImageIndex 
                   ? 'border-gold scale-110' 
                   : 'border-gold/30 scale-100 opacity-70'
@@ -109,6 +119,7 @@ const HeroSection = () => {
         <button 
           onClick={nextImage}
           className="p-2 rounded-full border-2 border-gold/50 bg-black/30 hover:bg-black/50 transition-all backdrop-blur-sm"
+          aria-label="Next image"
         >
           <ChevronRight className="h-6 w-6 text-gold" />
         </button>

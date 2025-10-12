@@ -1,73 +1,132 @@
-import ScrollSection from './ScrollSection';
-import { Sparkles } from 'lucide-react';
-import castleAerial from '@/assets/castle-aerial.jpg';
+import { useEffect, useRef, useState } from 'react';
+import treePathway from '@/assets/tree-pathway.jpg';
 import neuschwanstein from '@/assets/neuschwanstein.jpg';
-import crown from '@/assets/crown.jpg';
-import pathway from '@/assets/castle-pathway.jpg';
-
-const galleryImages = [
-  { src: castleAerial, title: 'The Grand Approach', span: 'col-span-1' },
-  { src: neuschwanstein, title: 'Fortress Majesty', span: 'col-span-2' },
-  { src: crown, title: 'Royal Heritage', span: 'col-span-1' },
-  { src: pathway, title: 'Hidden Passages', span: 'col-span-1' },
-];
+import castleArchway from '@/assets/castle-archway.jpg';
+import churchCastle from '@/assets/church-castle.jpg';
 
 const GallerySection = () => {
-  return (
-    <section className="py-20 md:py-32 px-8 bg-secondary">
-      <div className="max-w-[1440px] mx-auto">
-        <div className="text-center mb-16 space-y-6">
-          <ScrollSection animation="slide-up">
-            <h2 className="font-display text-4xl md:text-6xl font-light text-foreground leading-tight">
-              YOUR JOURNEY THROUGH TIME BEGINS HERE
-            </h2>
-          </ScrollSection>
-          
-          <ScrollSection animation="slide-up" delay={200}>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto font-body">
-              Discover how knights, nobles, and servants lived within the castle's towering walls during its golden age. We welcome you to step back in time.
-            </p>
-          </ScrollSection>
+  const [imagesVisible, setImagesVisible] = useState<boolean[]>([false, false, false, false, false]);
+  const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-          <ScrollSection animation="slide-up" delay={400}>
-            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 font-body mt-4">
-              OUR EVENTS
-            </button>
-          </ScrollSection>
+  useEffect(() => {
+    const observers = imageRefs.current.map((ref, index) => {
+      if (!ref) return null;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setTimeout(() => {
+                setImagesVisible(prev => {
+                  const newState = [...prev];
+                  newState[index] = true;
+                  return newState;
+                });
+              }, index * 150);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach((observer, index) => {
+        if (observer && imageRefs.current[index]) {
+          observer.unobserve(imageRefs.current[index]!);
+        }
+      });
+    };
+  }, []);
+
+  return (
+    <section className="relative w-full bg-secondary">
+      <div className="grid grid-cols-1 md:grid-cols-12 md:grid-rows-2 h-auto md:h-[800px]">
+        {/* Large left image - tree pathway */}
+        <div
+          ref={el => imageRefs.current[0] = el}
+          className={`md:col-span-3 md:row-span-2 relative overflow-hidden transition-all duration-700 ${
+            imagesVisible[0] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+        >
+          <img 
+            src={treePathway}
+            alt="Tree-lined pathway"
+            className="w-full h-full object-cover min-h-[400px] md:min-h-full"
+          />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {galleryImages.map((image, index) => (
-            <ScrollSection 
-              key={index}
-              animation="slide-up"
-              delay={index * 150}
-              className={`relative group ${image.span}`}
-            >
-              <div className="relative overflow-hidden rounded-lg border-[14px] border-background-cream shadow-xl">
-                {/* Sparkle decorations */}
-                <Sparkles className="absolute top-4 left-4 h-8 w-8 text-gold z-10" />
-                <Sparkles className="absolute top-4 right-4 h-8 w-8 text-gold z-10" />
-                <Sparkles className="absolute bottom-4 left-4 h-8 w-8 text-gold z-10" />
-                <Sparkles className="absolute bottom-4 right-4 h-8 w-8 text-gold z-10" />
-                
-                <div className="relative overflow-hidden aspect-[4/3]">
-                  <img 
-                    src={image.src}
-                    alt={image.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                </div>
+        {/* Text overlay section */}
+        <div
+          ref={el => imageRefs.current[1] = el}
+          className={`md:col-span-4 md:row-span-1 relative bg-[#E8E4D8] p-8 md:p-12 flex flex-col justify-center transition-all duration-700 delay-150 ${
+            imagesVisible[1] ? 'opacity-100' : 'opacity-0'
+          }`}
+        >
+          <div className={`transition-all duration-700 delay-300 ${
+            imagesVisible[1] ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+            <p className="text-foreground font-body text-base leading-relaxed mb-8">
+              Discover how knights, nobles, and servants lived within the castle's towering walls during its golden age. We welcome you to step back in time.
+            </p>
+          </div>
 
-                <div className="absolute bottom-0 left-0 right-0 p-6 text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                  <h3 className="font-display text-2xl text-primary-foreground">
-                    {image.title}
-                  </h3>
-                </div>
-              </div>
-            </ScrollSection>
-          ))}
+          <div className={`transition-all duration-700 delay-500 ${
+            imagesVisible[1] ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+          }`}>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-8">
+              YOUR JOURNEY THROUGH TIME BEGINS HERE
+            </h2>
+            
+            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 font-body font-medium">
+              OUR EVENTS
+            </button>
+          </div>
+        </div>
+
+        {/* Large center image - Neuschwanstein */}
+        <div
+          ref={el => imageRefs.current[2] = el}
+          className={`md:col-span-5 md:row-span-2 relative overflow-hidden group transition-all duration-700 delay-300 ${
+            imagesVisible[2] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+        >
+          <img 
+            src={neuschwanstein}
+            alt="Neuschwanstein Castle"
+            className="w-full h-full object-cover min-h-[400px] md:min-h-full transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        {/* Top right image - castle archway */}
+        <div
+          ref={el => imageRefs.current[3] = el}
+          className={`md:col-span-4 md:row-span-1 relative overflow-hidden group transition-all duration-700 delay-450 ${
+            imagesVisible[3] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+        >
+          <img 
+            src={castleArchway}
+            alt="Castle archway"
+            className="w-full h-full object-cover min-h-[300px] transition-transform duration-500 group-hover:scale-110"
+          />
+        </div>
+
+        {/* Bottom left image - church */}
+        <div
+          ref={el => imageRefs.current[4] = el}
+          className={`md:col-span-4 md:row-span-1 relative overflow-hidden group transition-all duration-700 delay-600 ${
+            imagesVisible[4] ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+          }`}
+        >
+          <img 
+            src={churchCastle}
+            alt="Church and castle"
+            className="w-full h-full object-cover min-h-[300px] transition-transform duration-500 group-hover:scale-110"
+          />
         </div>
       </div>
     </section>
