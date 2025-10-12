@@ -41,17 +41,17 @@ const ScrollSection = ({
   }, [delay]);
 
   const animationClass = {
-    'fade': 'opacity-0',
-    'slide-left': 'opacity-0 -translate-x-24',
-    'slide-right': 'opacity-0 translate-x-24',
-    'slide-up': 'opacity-0 translate-y-16',
-    'scale': 'opacity-0 scale-95'
+    'fade': 'animate-fade',
+    'slide-left': 'animate-slide-left',
+    'slide-right': 'animate-slide-right',
+    'slide-up': 'animate-slide-up',
+    'scale': 'animate-scale'
   }[animation];
 
   return (
     <div
       ref={sectionRef}
-      className={`transition-all duration-800 ease-out ${animationClass} ${className}`}
+      className={`transition-all duration-[800ms] ease-out ${animationClass} ${className}`}
       style={{
         transitionDelay: `${delay}ms`
       }}

@@ -108,76 +108,34 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .fade-in {
-    animation: fadeIn 0.8s ease-out forwards;
+  /* Animation trigger - when this class is added, elements become visible */
+  .animate-in {
+    opacity: 1 !important;
+    transform: translateX(0) translateY(0) scale(1) !important;
   }
   
-  .slide-in-left {
-    animation: slideInLeft 0.8s ease-out forwards;
+  /* Initial hidden states for different animation types */
+  .animate-fade {
+    opacity: 0;
   }
   
-  .slide-in-right {
-    animation: slideInRight 0.8s ease-out forwards;
+  .animate-slide-left {
+    opacity: 0;
+    transform: translateX(-100px);
   }
   
-  .slide-in-up {
-    animation: slideInUp 0.8s ease-out forwards;
+  .animate-slide-right {
+    opacity: 0;
+    transform: translateX(100px);
   }
   
-  .scale-in {
-    animation: scaleIn 0.8s ease-out forwards;
+  .animate-slide-up {
+    opacity: 0;
+    transform: translateY(80px);
   }
   
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  @keyframes slideInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(100px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  
-  @keyframes slideInUp {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes scaleIn {
-    from {
-      opacity: 0;
-      transform: scale(0.95);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
+  .animate-scale {
+    opacity: 0;
+    transform: scale(0.95);
   }
 }
