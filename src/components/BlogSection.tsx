@@ -131,7 +131,7 @@ const BlogSection = () => {
                   : 'opacity-0 translate-y-16'
               }`}
             >
-              <div className="relative overflow-hidden border-[14px] border-background-cream" style={{ aspectRatio: '4/3' }}>
+              <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
                 <Sparkles 
                   className="absolute z-10" 
                   style={{ 

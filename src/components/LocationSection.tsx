@@ -76,7 +76,7 @@ const LocationSection = () => {
             }`}
           >
             {/* Location & Directions */}
-            <div className="space-y-6">
+            <div className="space-y-6 pb-16">
               <div className="flex items-center gap-3 mb-6">
                 <MapPin className="h-8 w-8 text-gold" />
                 <h2 className="font-display text-3xl md:text-4xl font-light">
@@ -88,6 +88,9 @@ const LocationSection = () => {
                 Through eco-conscious practices and a focus on preserving biodiversity, we invite you to be a part of our conservation mission
               </p>
             </div>
+
+            {/* Divider Line */}
+            <div className="border-t border-primary-foreground/20 mb-16" />
 
             {/* Accessibility & Facilities */}
             <div className="space-y-6">
