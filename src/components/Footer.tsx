@@ -42,8 +42,8 @@ const Footer = () => {
   return (
     <footer className="relative overflow-hidden bg-[#1a1a1a]">
       <div className="max-w-[1440px] mx-auto">
-        {/* Top Section: Three columns on black */}
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1fr] gap-0">
+        {/* Top Section */}
+        <div className="grid grid-cols-1 md:grid-cols-[0.8fr_1fr_1.5fr] gap-0">
           {/* Left - HISTORY Logo */}
           <div className="py-12 px-8 flex items-center justify-center">
             <div className="flex items-center gap-2">
@@ -55,58 +55,69 @@ const Footer = () => {
           </div>
 
           {/* Center - Tagline */}
-          <div className="py-12 px-8 flex items-center justify-center">
-            <p className="text-center leading-relaxed font-body max-w-md text-white">
+          <div className="py-12 px-8 flex items-center justify-start">
+            <p className="text-justify leading-relaxed font-body text-white">
               Whether you're drawn by history, mystery, or breathtaking views, we welcome you to step back in time.
             </p>
           </div>
 
           {/* Right - Navigation Links and Social Icons */}
           <div className="py-12 px-8 flex items-center justify-center">
-            <div className="flex items-center gap-8">
-              <div className="grid grid-cols-2 gap-x-12 gap-y-3">
-                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                  Home 1
-                </a>
-                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                  About us
-                </a>
-                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+            <div className="space-y-3 w-full max-w-md">
+              {/* Row 1: Home 1, About us, Icons */}
+              <div className="flex items-center justify-between gap-6">
+                <div className="flex items-center gap-12">
+                  <a href="#" className="hover:opacity-80 transition-colors font-body whitespace-nowrap" style={{ color: '#f0e7af' }}>
+                    Home 1
+                  </a>
+                  <a href="#" className="hover:opacity-80 transition-colors font-body whitespace-nowrap" style={{ color: '#f0e7af' }}>
+                    About us
+                  </a>
+                </div>
+                
+                {/* Social Media Icons */}
+                <div className="flex items-center gap-3">
+                  <a 
+                    href="#" 
+                    className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <Facebook className="h-5 w-5" style={{ color: '#f0e7af' }} />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-5 w-5" style={{ color: '#f0e7af' }} />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
+                    aria-label="X (Twitter)"
+                  >
+                    <FaXTwitter className="h-5 w-5" style={{ color: '#f0e7af' }} />
+                  </a>
+                </div>
+              </div>
+              
+              {/* Row 2: Home 2, Pricing */}
+              <div className="flex items-center gap-12">
+                <a href="#" className="hover:opacity-80 transition-colors font-body whitespace-nowrap" style={{ color: '#f0e7af' }}>
                   Home 2
                 </a>
-                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+                <a href="#" className="hover:opacity-80 transition-colors font-body whitespace-nowrap" style={{ color: '#f0e7af' }}>
                   Pricing
-                </a>
-                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                  Home 3
-                </a>
-                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                  Contact us
                 </a>
               </div>
               
-              {/* Social Media Icons */}
-              <div className="flex items-center gap-3">
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="h-5 w-5" style={{ color: '#f0e7af' }} />
+              {/* Row 3: Home 3, Contact us */}
+              <div className="flex items-center gap-12">
+                <a href="#" className="hover:opacity-80 transition-colors font-body whitespace-nowrap" style={{ color: '#f0e7af' }}>
+                  Home 3
                 </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
-                  aria-label="Instagram"
-                >
-                  <Instagram className="h-5 w-5" style={{ color: '#f0e7af' }} />
-                </a>
-                <a 
-                  href="#" 
-                  className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
-                  aria-label="X (Twitter)"
-                >
-                  <FaXTwitter className="h-5 w-5" style={{ color: '#f0e7af' }} />
+                <a href="#" className="hover:opacity-80 transition-colors font-body whitespace-nowrap" style={{ color: '#f0e7af' }}>
+                  Contact us
                 </a>
               </div>
             </div>
