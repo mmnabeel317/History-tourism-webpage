@@ -60,12 +60,15 @@ const TestimonialSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-8 h-full flex items-center min-h-[600px]">
         <div className="flex items-center justify-end w-full">
-          <div className="relative">
+          <div className="flex items-center gap-0">
             {/* Static white background card */}
-            <div className="w-full lg:w-[480px] bg-background p-12 shadow-2xl">
+            <div className="w-full lg:w-[520px] bg-background p-16 shadow-2xl">
               {/* Fading content inside */}
               <div className={`space-y-8 transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-                <blockquote className="text-2xl md:text-3xl font-display font-light text-foreground leading-relaxed">
+                <blockquote 
+                  className="text-lg md:text-xl text-foreground leading-relaxed"
+                  style={{ fontFamily: "'Gafata', 'Inter', sans-serif" }}
+                >
                   "{testimonials[currentIndex].quote}"
                 </blockquote>
 
@@ -79,7 +82,7 @@ const TestimonialSection = () => {
                     <p className="font-display text-xl font-medium text-foreground">
                       {testimonials[currentIndex].name}
                     </p>
-                    <p className="text-muted-foreground font-body">
+                    <p className="text-muted-foreground font-body text-sm">
                       {testimonials[currentIndex].location}
                     </p>
                   </div>
@@ -88,38 +91,30 @@ const TestimonialSection = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="absolute -right-16 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+            <div className="flex flex-col gap-0">
               <button 
                 onClick={prevTestimonial}
                 disabled={isTransitioning}
-                className="w-11 h-11 rounded-full flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2"
+                className="w-[80px] h-[100px] flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-t border-r border-gold"
                 style={{
-                  background: '#111',
-                  border: '1px solid #d6caa0',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
-                  outlineColor: 'hsl(var(--gold-hero))'
+                  background: 'hsl(var(--gold))',
+                  outlineColor: 'hsl(var(--gold))'
                 }}
                 aria-label="Previous testimonial"
-                onMouseEnter={(e) => !isTransitioning && (e.currentTarget.style.background = '#151515')}
-                onMouseLeave={(e) => e.currentTarget.style.background = '#111'}
               >
-                <ChevronLeft className="h-6 w-6" style={{ color: 'hsl(var(--gold-hero))' }} />
+                <ChevronLeft className="h-8 w-8 text-primary" />
               </button>
               <button 
                 onClick={nextTestimonial}
                 disabled={isTransitioning}
-                className="w-11 h-11 rounded-full flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2"
+                className="w-[80px] h-[100px] flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-b border-r border-gold"
                 style={{
-                  background: '#111',
-                  border: '1px solid #d6caa0',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
-                  outlineColor: 'hsl(var(--gold-hero))'
+                  background: 'hsl(var(--gold))',
+                  outlineColor: 'hsl(var(--gold))'
                 }}
                 aria-label="Next testimonial"
-                onMouseEnter={(e) => !isTransitioning && (e.currentTarget.style.background = '#151515')}
-                onMouseLeave={(e) => e.currentTarget.style.background = '#111'}
               >
-                <ChevronRight className="h-6 w-6" style={{ color: 'hsl(var(--gold-hero))' }} />
+                <ChevronRight className="h-8 w-8 text-primary" />
               </button>
             </div>
           </div>

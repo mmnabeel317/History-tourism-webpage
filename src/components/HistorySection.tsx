@@ -94,43 +94,69 @@ const HistorySection = () => {
 
             <div
               ref={para2Ref}
-              className={`space-y-8 transition-all duration-[2000ms] ease-out delay-400 ${
+              className={`space-y-12 transition-all duration-[2000ms] ease-out delay-400 ${
                 para2Visible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-24'
               }`}
             >
               <div>
-                <h3 
-                  style={{
-                    fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
-                    fontWeight: 300,
-                    fontSize: 'clamp(24px, 2vw, 30px)',
-                    lineHeight: 1.2,
-                    color: '#1f1c16',
-                    marginBottom: '12px'
-                  }}
-                >
-                  1247 – THE CASTLE IS BORN
-                </h3>
+                <div className="flex items-baseline gap-6 mb-3">
+                  <span 
+                    style={{
+                      fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                      fontWeight: 300,
+                      fontSize: 'clamp(24px, 2vw, 30px)',
+                      lineHeight: 1.2,
+                      color: '#1f1c16',
+                    }}
+                  >
+                    1247
+                  </span>
+                  <span 
+                    style={{
+                      fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                      fontWeight: 300,
+                      fontSize: 'clamp(24px, 2vw, 30px)',
+                      lineHeight: 1.2,
+                      color: '#1f1c16',
+                    }}
+                  >
+                    – THE CASTLE IS BORN
+                  </span>
+                </div>
+                <div className="border-t border-muted-foreground/30 mb-3" />
                 <p className="text-muted-foreground leading-relaxed font-body text-base">
                   Construction of Blackthorn Castle begins under the command of Lord Edric Blackthorn, establishing a stronghold that will shape the region's history for centuries.
                 </p>
               </div>
 
               <div>
-                <h3 
-                  style={{
-                    fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
-                    fontWeight: 300,
-                    fontSize: 'clamp(24px, 2vw, 30px)',
-                    lineHeight: 1.2,
-                    color: '#1f1c16',
-                    marginBottom: '12px'
-                  }}
-                >
-                  1892 – THE GRAND RESTORATION
-                </h3>
+                <div className="flex items-baseline gap-6 mb-3">
+                  <span 
+                    style={{
+                      fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                      fontWeight: 300,
+                      fontSize: 'clamp(24px, 2vw, 30px)',
+                      lineHeight: 1.2,
+                      color: '#1f1c16',
+                    }}
+                  >
+                    1892
+                  </span>
+                  <span 
+                    style={{
+                      fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                      fontWeight: 300,
+                      fontSize: 'clamp(24px, 2vw, 30px)',
+                      lineHeight: 1.2,
+                      color: '#1f1c16',
+                    }}
+                  >
+                    – THE GRAND RESTORATION
+                  </span>
+                </div>
+                <div className="border-t border-muted-foreground/30 mb-3" />
                 <p className="text-muted-foreground leading-relaxed font-body text-base">
                   After decades of abandonment, Blackthorn Castle is restored, reviving its former grandeur and opening its gates to the world once again.
                 </p>

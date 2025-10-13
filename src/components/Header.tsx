@@ -25,13 +25,13 @@ const Header = () => {
       <div className="max-w-[1440px] mx-auto px-8 py-4 flex items-center justify-between">
         {/* Left Section */}
         <nav className="hidden lg:flex items-center gap-8">
-          <button className="flex items-center gap-1 text-primary-foreground hover:text-gold transition-colors">
+          <button className="flex items-center gap-1 text-gold hover:text-primary-foreground transition-colors">
             Demos <ChevronDown className="h-4 w-4" />
           </button>
-          <button className="flex items-center gap-1 text-primary-foreground hover:text-gold transition-colors">
+          <button className="flex items-center gap-1 text-gold hover:text-primary-foreground transition-colors">
             About Us <ChevronDown className="h-4 w-4" />
           </button>
-          <a href="#events" className="text-primary-foreground hover:text-gold transition-colors">
+          <a href="#events" className="text-gold hover:text-primary-foreground transition-colors">
             Events
           </a>
         </nav>
@@ -44,18 +44,18 @@ const Header = () => {
 
         {/* Right Section */}
         <div className="flex items-center gap-6">
-          <a href="#contact" className="hidden lg:block text-primary-foreground hover:text-gold transition-colors">
+          <a href="#contact" className="hidden lg:block text-gold hover:text-primary-foreground transition-colors">
             Contact Us
           </a>
-          <button className="flex items-center gap-1 text-primary-foreground hover:text-gold transition-colors">
+          <button className="flex items-center gap-1 text-gold hover:text-primary-foreground transition-colors">
             All Pages <ChevronDown className="h-4 w-4" />
           </button>
-          <Button variant="ghost" size="icon" className="relative text-primary-foreground hover:text-gold">
-            <ShoppingCart className="h-5 w-5" />
-            <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-gold text-primary text-xs flex items-center justify-center">
+          <button className="relative w-10 h-10 rounded-full border-2 border-gold hover:bg-gold transition-colors group">
+            <ShoppingCart className="h-5 w-5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-gold group-hover:text-primary" />
+            <span className="absolute -top-1 -right-1 h-5 w-5 rounded-full bg-gold text-primary text-xs flex items-center justify-center font-semibold">
               0
             </span>
-          </Button>
+          </button>
         </div>
       </div>
     </header>
