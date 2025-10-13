@@ -3,6 +3,7 @@ import treePathway from '@/assets/tree-pathway.jpg';
 import neuschwanstein from '@/assets/neuschwanstein.jpg';
 import castleArchway from '@/assets/castle-archway.jpg';
 import churchCastle from '@/assets/church-castle.jpg';
+import castleCourtyard from '@/assets/castle-courtyard.jpg';
 
 const GallerySection = () => {
   const leftRef = useRef<HTMLDivElement>(null);
@@ -49,10 +50,10 @@ const GallerySection = () => {
         className="w-full lg:w-[40%] flex flex-col"
       >
         {/* Top: Photo with text overlay */}
-        <div className="relative h-[40vh] lg:h-[50vh] overflow-hidden">
+        <div className="relative h-[40vh] lg:h-[50vh] overflow-hidden lg:flex-1">
           <img 
-            src={treePathway}
-            alt="Castle pathway"
+            src={castleCourtyard}
+            alt="Castle courtyard archway"
             className="w-full h-full object-cover"
           />
           {/* Text overlay on image */}
