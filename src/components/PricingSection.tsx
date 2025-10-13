@@ -60,8 +60,25 @@ const PricingSection = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32 px-8 bg-background">
-      <div className="max-w-[1440px] mx-auto">
+    <section className="relative py-20 md:py-32 px-8 bg-background overflow-hidden">
+      {/* Decorative Sparkles */}
+      <div className="absolute inset-0 pointer-events-none">
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className="absolute text-gold/30"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              fontSize: `${Math.random() * 20 + 10}px`,
+            }}
+          >
+            ✦
+          </div>
+        ))}
+      </div>
+
+      <div className="relative z-10 max-w-[1440px] mx-auto">
         <div
           ref={titleRef}
           className={`text-center mb-12 space-y-8 transition-all duration-[800ms] ease-out ${
@@ -70,13 +87,15 @@ const PricingSection = () => {
               : 'opacity-0 translate-y-16'
           }`}
         >
-          <h2 className="font-display text-4xl md:text-5xl font-light text-foreground leading-tight mb-4">
-            TICKET PRICES & ADMISSIONS
-          </h2>
+          <div className="grid lg:grid-cols-2 gap-8 items-center mb-8">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-foreground leading-tight">
+              TICKET PRICES & ADMISSIONS
+            </h2>
 
-          <p className="text-muted-foreground text-base max-w-3xl mx-auto font-body mb-8">
-            From immersive night tours to seasonal festivals, We offer unforgettable events throughout the year. Step into history and discover something extraordinary. Book a private tour & explore the castle like never before.
-          </p>
+            <p className="text-muted-foreground text-base font-body leading-relaxed">
+              From immersive night tours to seasonal festivals, We offer unforgettable events throughout the year. Step into history and discover something extraordinary. Book a private tour & explore the castle like never before.
+            </p>
+          </div>
 
           <div className="inline-flex rounded-full bg-secondary p-1">
             <button
@@ -109,7 +128,7 @@ const PricingSection = () => {
           {pricingCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-card border border-border p-8 text-center space-y-6 hover:shadow-xl transition-all hover:-translate-y-2 h-full flex flex-col duration-700 ${
+              className={`bg-background border border-border p-8 text-center space-y-6 hover:shadow-xl transition-all hover:-translate-y-2 h-full flex flex-col duration-[1200ms] ${
                 cardsVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-16'

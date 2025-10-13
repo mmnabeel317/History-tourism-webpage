@@ -44,7 +44,7 @@ const VisitSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div
             ref={textRef}
-            className={`space-y-8 transition-all duration-[800ms] ease-out ${
+            className={`space-y-8 transition-all duration-[1200ms] ease-out ${
               textVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-16'
@@ -65,7 +65,7 @@ const VisitSection = () => {
 
           <div
             ref={cardRef}
-            className={`transition-all duration-[800ms] ease-out delay-200 ${
+            className={`transition-all duration-[1200ms] ease-out delay-200 ${
               cardVisible 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-16'

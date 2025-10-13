@@ -43,7 +43,7 @@ const LocationSection = () => {
       <div className="max-w-[1440px] mx-auto space-y-24">
         <div
           ref={section1Ref}
-          className={`grid lg:grid-cols-2 gap-12 items-start transition-all duration-[800ms] ease-out ${
+          className={`grid lg:grid-cols-2 gap-12 items-start transition-all duration-[1200ms] ease-out ${
             section1Visible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -78,7 +78,7 @@ const LocationSection = () => {
 
         <div
           ref={section2Ref}
-          className={`grid lg:grid-cols-2 gap-12 items-start transition-all duration-[800ms] ease-out ${
+          className={`grid lg:grid-cols-2 gap-12 items-start transition-all duration-[1200ms] ease-out ${
             section2Visible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'

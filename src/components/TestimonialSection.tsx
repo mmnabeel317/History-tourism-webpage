@@ -45,9 +45,9 @@ const TestimonialSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-8">
-        <div className="flex items-center justify-end">
-          <div className="w-full lg:w-1/2 bg-card/95 backdrop-blur-sm p-12 rounded-lg shadow-2xl">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-8 h-full flex items-center">
+        <div className="flex items-center justify-end w-full">
+          <div className="w-full lg:w-[480px] bg-background p-12 shadow-2xl">
             <div className="space-y-8">
               <blockquote className="text-2xl md:text-3xl font-display font-light text-foreground leading-relaxed">
                 "{testimonials[currentIndex].quote}"
@@ -69,17 +69,17 @@ const TestimonialSection = () => {
                 </div>
               </div>
 
-              <div className="flex gap-4 pt-4">
+              <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4">
                 <button 
                   onClick={prevTestimonial}
-                  className="p-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105"
+                  className="p-3 bg-gold text-foreground hover:bg-gold/90 transition-all hover:scale-105"
                   aria-label="Previous testimonial"
                 >
                   <ChevronLeft className="h-6 w-6" />
                 </button>
                 <button 
                   onClick={nextTestimonial}
-                  className="p-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105"
+                  className="p-3 bg-gold text-foreground hover:bg-gold/90 transition-all hover:scale-105"
                   aria-label="Next testimonial"
                 >
                   <ChevronRight className="h-6 w-6" />

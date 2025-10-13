@@ -44,8 +44,8 @@ const VideoTextSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-12">
             <div
-              ref={firstParaRef}
-              className={`transition-all duration-[800ms] ease-out ${
+            ref={firstParaRef}
+              className={`transition-all duration-[1200ms] ease-out ${
                 firstVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-24'
@@ -60,8 +60,8 @@ const VideoTextSection = () => {
             </div>
             
             <div
-              ref={secondParaRef}
-              className={`space-y-4 transition-all duration-[800ms] ease-out delay-300 ${
+            ref={secondParaRef}
+              className={`space-y-4 transition-all duration-[1200ms] ease-out delay-300 ${
                 secondVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-12'

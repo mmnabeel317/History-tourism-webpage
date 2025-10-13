@@ -61,7 +61,7 @@ const HistorySection = () => {
           <div className="space-y-8">
             <div
               ref={titleRef}
-              className={`transition-all duration-[800ms] ease-out ${
+              className={`transition-all duration-[1200ms] ease-out ${
                 titleVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-24'
@@ -74,7 +74,7 @@ const HistorySection = () => {
 
             <p
               ref={para1Ref}
-              className={`text-muted-foreground leading-relaxed text-base font-body transition-all duration-[800ms] ease-out delay-200 ${
+              className={`text-muted-foreground leading-relaxed text-base font-body transition-all duration-[1200ms] ease-out delay-200 ${
                 para1Visible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-24'
@@ -85,7 +85,7 @@ const HistorySection = () => {
 
             <div
               ref={para2Ref}
-              className={`space-y-8 transition-all duration-[800ms] ease-out delay-400 ${
+              className={`space-y-8 transition-all duration-[1200ms] ease-out delay-400 ${
                 para2Visible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 translate-x-24'

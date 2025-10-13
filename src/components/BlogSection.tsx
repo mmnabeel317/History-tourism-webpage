@@ -82,23 +82,24 @@ const BlogSection = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 px-8 bg-secondary">
+    <section className="py-20 md:py-32 px-8 bg-[hsl(48,35%,88%)]">
       <div className="max-w-[1440px] mx-auto">
         <div
           ref={titleRef}
-          className={`text-center mb-16 space-y-6 transition-all duration-[800ms] ease-out ${
+          className={`mb-16 transition-all duration-[1200ms] ease-out ${
             titleVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
           }`}
         >
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight">
-            DISCOVER THE STORIES ETCHED IN STONE
-          </h2>
-
-          <p className="text-muted-foreground text-base max-w-3xl mx-auto font-body">
-            From immersive night tours to seasonal festivals, We offer unforgettable events throughout the year. Step into history and explore the castle like never before.
-          </p>
+          <div className="grid lg:grid-cols-2 gap-8 items-center mb-8">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-foreground leading-tight">
+              DISCOVER THE STORIES ETCHED IN STONE
+            </h2>
+            <p className="text-muted-foreground text-base font-body leading-relaxed">
+              From immersive night tours to seasonal festivals, We offer unforgettable events throughout the year. Step into history and discover something extraordinary. Book a private tour and explore the castle like never before.
+            </p>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -106,7 +107,7 @@ const BlogSection = () => {
             <article
               key={index}
               ref={el => cardsRefs.current[index] = el}
-              className={`bg-card overflow-hidden hover:shadow-2xl transition-all hover:-translate-y-2 group duration-700 ${
+              className={`group transition-all duration-[1200ms] ease-out hover:scale-[1.02] ${
                 cardsVisible[index] 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-16'
@@ -125,7 +126,7 @@ const BlogSection = () => {
                 />
               </div>
 
-              <div className="p-8 space-y-4">
+              <div className="p-8 space-y-4 bg-background">
                 <p className="text-sm text-muted-foreground font-body">
                   {post.date}
                 </p>
