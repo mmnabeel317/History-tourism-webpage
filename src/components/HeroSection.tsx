@@ -75,13 +75,13 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Left ornament - bottom (rotated 180deg so flowers face inward) */}
+      {/* Left ornament - bottom (flipped vertically so flowers face inward) */}
       <div 
         className="absolute left-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
           height: '46vh',
           maxHeight: '550px',
-          transform: `translateY(${-scrollY * 0.5}%) rotate(180deg)`,
+          transform: `translateY(${-scrollY * 0.5}%) scaleY(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
       >
@@ -111,13 +111,13 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Right ornament - bottom, mirrored and rotated 180deg so flowers face inward */}
+      {/* Right ornament - bottom, mirrored and flipped vertically so flowers face inward */}
       <div 
         className="absolute right-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
           height: '46vh',
           maxHeight: '550px',
-          transform: `translateY(${-scrollY * 0.5}%) scaleX(-1) rotate(180deg)`,
+          transform: `translateY(${-scrollY * 0.5}%) scaleX(-1) scaleY(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
       >
