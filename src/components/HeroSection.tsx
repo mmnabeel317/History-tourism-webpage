@@ -56,65 +56,39 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       </div>
 
-      {/* Border Ornaments - Left and Right */}
-      {/* Left ornaments - stacked vertically */}
-      <div className="absolute left-2 md:left-3 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:flex md:flex-col lg:opacity-100 md:opacity-70">
-        <div 
-          className="h-[46vh] md:h-[46vh] w-auto"
-          style={{ 
-            transform: `translateY(${scrollY * 0.005}%)`,
-            transition: 'transform 0.1s ease-out'
-          }}
-        >
-          <img 
-            src={ornament} 
-            alt="" 
-            className="h-full w-auto object-contain"
-          />
-        </div>
-        <div 
-          className="h-[46vh] md:h-[46vh] w-auto"
-          style={{ 
-            transform: `translateY(${scrollY * 0.005}%) rotate(180deg)`,
-            transition: 'transform 0.1s ease-out'
-          }}
-        >
-          <img 
-            src={ornament} 
-            alt="" 
-            className="h-full w-auto object-contain"
-          />
-        </div>
+      {/* Border Ornaments - Left and Right - Flush to edges */}
+      {/* Left ornament - full height */}
+      <div 
+        className="absolute left-0 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:block"
+        style={{ 
+          maxHeight: '1100px',
+          transform: `translateY(${scrollY * 0.5}%)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <img 
+          src={ornament} 
+          alt="" 
+          className="h-[92vh] max-h-[1100px] w-auto object-contain opacity-100"
+          style={{ paddingLeft: '8px' }}
+        />
       </div>
       
-      {/* Right ornaments - stacked vertically and mirrored */}
-      <div className="absolute right-2 md:right-3 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:flex md:flex-col lg:opacity-100 md:opacity-70">
-        <div 
-          className="h-[46vh] md:h-[46vh] w-auto"
-          style={{ 
-            transform: `translateY(${scrollY * 0.005}%) scaleX(-1)`,
-            transition: 'transform 0.1s ease-out'
-          }}
-        >
-          <img 
-            src={ornament} 
-            alt="" 
-            className="h-full w-auto object-contain"
-          />
-        </div>
-        <div 
-          className="h-[46vh] md:h-[46vh] w-auto"
-          style={{ 
-            transform: `translateY(${scrollY * 0.005}%) scaleX(-1) rotate(180deg)`,
-            transition: 'transform 0.1s ease-out'
-          }}
-        >
-          <img 
-            src={ornament} 
-            alt="" 
-            className="h-full w-auto object-contain"
-          />
-        </div>
+      {/* Right ornament - full height, mirrored */}
+      <div 
+        className="absolute right-0 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:block"
+        style={{ 
+          maxHeight: '1100px',
+          transform: `translateY(${scrollY * 0.5}%) scaleX(-1)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <img 
+          src={ornament} 
+          alt="" 
+          className="h-[92vh] max-h-[1100px] w-auto object-contain opacity-100"
+          style={{ paddingRight: '8px' }}
+        />
       </div>
 
       {/* Content */}
@@ -158,13 +132,13 @@ const HeroSection = () => {
             background: '#111',
             border: '1px solid #d6caa0',
             boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
-            outlineColor: 'hsl(var(--gold-hero))'
+            outlineColor: '#f0e7af'
           }}
           aria-label="Previous image"
-          onMouseEnter={(e) => e.currentTarget.style.background = '#151515'}
+          onMouseEnter={(e) => e.currentTarget.style.background = '#fff'}
           onMouseLeave={(e) => e.currentTarget.style.background = '#111'}
         >
-          <ChevronLeft className="h-6 w-6" style={{ color: 'hsl(var(--gold-hero))' }} />
+          <ChevronLeft className="h-6 w-6" style={{ color: '#f0e7af' }} />
         </button>
         
         <div className="flex gap-4">
@@ -194,13 +168,13 @@ const HeroSection = () => {
             background: '#111',
             border: '1px solid #d6caa0',
             boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
-            outlineColor: 'hsl(var(--gold-hero))'
+            outlineColor: '#f0e7af'
           }}
           aria-label="Next image"
-          onMouseEnter={(e) => e.currentTarget.style.background = '#151515'}
+          onMouseEnter={(e) => e.currentTarget.style.background = '#fff'}
           onMouseLeave={(e) => e.currentTarget.style.background = '#111'}
         >
-          <ChevronRight className="h-6 w-6" style={{ color: 'hsl(var(--gold-hero))' }} />
+          <ChevronRight className="h-6 w-6" style={{ color: '#f0e7af' }} />
         </button>
       </div>
     </section>

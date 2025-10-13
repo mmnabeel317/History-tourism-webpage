@@ -42,9 +42,9 @@ const GallerySection = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-stretch">
+    <section className="relative min-h-screen flex flex-col lg:flex-row items-stretch">
       {/* Left Side - Text Content with Cream Background */}
-      <div className="w-full lg:w-2/5 bg-background-cream flex items-center px-8 md:px-16 py-20">
+      <div className="w-full lg:w-[40%] bg-background-cream flex items-center px-8 md:px-16 py-20 lg:py-32">
         <div
           ref={textRef}
           className={`space-y-8 transition-all duration-[1200ms] ease-out ${
@@ -53,37 +53,35 @@ const GallerySection = () => {
               : 'opacity-0 translate-y-16'
           }`}
         >
-          <p className="text-muted-foreground text-base font-body leading-relaxed">
-            Discover how knights, nobles, and servants lived within the castle's towering walls during its golden age. We welcome you to step back in time.
-          </p>
-
           <h2 
             style={{
-              fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+              fontFamily: "'Playfair Display', 'Georgia', 'Times New Roman', serif",
               fontWeight: 300,
               fontSize: 'clamp(28px, 3.2vw, 42px)',
               lineHeight: 1.15,
+              letterSpacing: '0.02em',
               color: '#1f1c16',
-              maxWidth: '20ch'
+              textTransform: 'uppercase',
+              maxWidth: '18ch'
             }}
           >
             YOUR JOURNEY THROUGH TIME BEGINS HERE
           </h2>
 
-          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 font-body font-medium">
+          <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-all hover:scale-105 font-body font-medium text-sm">
             OUR EVENTS
           </button>
         </div>
       </div>
 
-      {/* Right Side - Image Grid */}
+      {/* Right Side - 2x2 Image Grid */}
       <div 
         ref={imagesRef}
-        className="w-full lg:w-3/5 grid grid-cols-2 grid-rows-2"
+        className="w-full lg:w-[60%] grid grid-cols-2 grid-rows-2 gap-3 md:gap-4 p-4 lg:p-0"
       >
         {/* Top Left - Tree Pathway */}
         <div 
-          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out ${
+          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out hover:scale-[1.01] ${
             imagesVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -93,13 +91,13 @@ const GallerySection = () => {
           <img 
             src={treePathway}
             alt="Tree-lined pathway to castle"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover min-h-[250px] lg:min-h-[350px]"
           />
         </div>
 
         {/* Top Right - Neuschwanstein Castle */}
         <div 
-          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out ${
+          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out hover:scale-[1.01] ${
             imagesVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -109,13 +107,13 @@ const GallerySection = () => {
           <img 
             src={neuschwanstein}
             alt="Neuschwanstein Castle at sunset"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover min-h-[250px] lg:min-h-[350px]"
           />
         </div>
 
         {/* Bottom Left - Castle Archway */}
         <div 
-          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out ${
+          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out hover:scale-[1.01] ${
             imagesVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -125,13 +123,13 @@ const GallerySection = () => {
           <img 
             src={castleArchway}
             alt="Castle archway with flowers"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover min-h-[250px] lg:min-h-[350px]"
           />
         </div>
 
         {/* Bottom Right - Church Castle */}
         <div 
-          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out ${
+          className={`relative overflow-hidden transition-all duration-[1200ms] ease-out hover:scale-[1.01] ${
             imagesVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -141,7 +139,7 @@ const GallerySection = () => {
           <img 
             src={churchCastle}
             alt="Church and castle towers"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover min-h-[250px] lg:min-h-[350px]"
           />
         </div>
       </div>
