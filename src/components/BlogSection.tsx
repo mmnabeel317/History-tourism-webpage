@@ -82,7 +82,7 @@ const BlogSection = () => {
   }, []);
 
   return (
-    <section className="py-20 md:py-32 px-8 bg-[hsl(48,35%,88%)]">
+    <section className="py-20 md:py-32 px-8" style={{ background: 'hsl(var(--wheat-hero))' }}>
       <div className="max-w-[1440px] mx-auto">
         <div
           ref={titleRef}
@@ -92,17 +92,35 @@ const BlogSection = () => {
               : 'opacity-0 translate-y-16'
           }`}
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center mb-8">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-foreground leading-tight">
+          <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+            <h2 
+              style={{
+                fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                fontWeight: 300,
+                fontSize: 'clamp(28px, 3.2vw, 42px)',
+                lineHeight: 1.15,
+                letterSpacing: '-0.01em',
+                color: '#1f1c16',
+                maxWidth: '16ch'
+              }}
+            >
               DISCOVER THE STORIES ETCHED IN STONE
             </h2>
-            <p className="text-muted-foreground text-base font-body leading-relaxed">
+            <p 
+              className="font-body"
+              style={{
+                fontSize: '18px',
+                lineHeight: 1.75,
+                color: '#3b372f',
+                maxWidth: '48ch'
+              }}
+            >
               From immersive night tours to seasonal festivals, We offer unforgettable events throughout the year. Step into history and discover something extraordinary. Book a private tour and explore the castle like never before.
             </p>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-5 md:gap-7 lg:gap-10">
           {blogPosts.map((post, index) => (
             <article
               key={index}
@@ -113,35 +131,102 @@ const BlogSection = () => {
                   : 'opacity-0 translate-y-16'
               }`}
             >
-              <div className="relative overflow-hidden border-[14px] border-background-cream">
-                <Sparkles className="absolute top-4 left-4 h-6 w-6 text-gold z-10" />
-                <Sparkles className="absolute top-4 right-4 h-6 w-6 text-gold z-10" />
-                <Sparkles className="absolute bottom-4 left-4 h-6 w-6 text-gold z-10" />
-                <Sparkles className="absolute bottom-4 right-4 h-6 w-6 text-gold z-10" />
+              <div className="relative overflow-hidden border-[14px] border-background-cream" style={{ aspectRatio: '4/3' }}>
+                <Sparkles 
+                  className="absolute z-10" 
+                  style={{ 
+                    top: '10px', 
+                    left: '10px', 
+                    width: '20px', 
+                    height: '20px',
+                    color: 'hsl(var(--gold))' 
+                  }} 
+                />
+                <Sparkles 
+                  className="absolute z-10" 
+                  style={{ 
+                    top: '10px', 
+                    right: '10px', 
+                    width: '20px', 
+                    height: '20px',
+                    color: 'hsl(var(--gold))' 
+                  }} 
+                />
+                <Sparkles 
+                  className="absolute z-10" 
+                  style={{ 
+                    bottom: '10px', 
+                    left: '10px', 
+                    width: '20px', 
+                    height: '20px',
+                    color: 'hsl(var(--gold))' 
+                  }} 
+                />
+                <Sparkles 
+                  className="absolute z-10" 
+                  style={{ 
+                    bottom: '10px', 
+                    right: '10px', 
+                    width: '20px', 
+                    height: '20px',
+                    color: 'hsl(var(--gold))' 
+                  }} 
+                />
                 
                 <img 
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
 
               <div className="p-8 space-y-4 bg-background">
-                <p className="text-sm text-muted-foreground font-body">
+                <p 
+                  className="font-body text-meta"
+                  style={{ color: '#7a7368' }}
+                >
                   {post.date}
                 </p>
 
-                <h3 className="font-display text-2xl font-medium text-foreground leading-tight">
+                <h3 
+                  style={{
+                    fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                    fontWeight: 300,
+                    fontSize: 'clamp(24px, 2vw, 30px)',
+                    lineHeight: 1.25,
+                    color: '#2a2721'
+                  }}
+                >
                   {post.title}
                 </h3>
 
-                <p className="text-muted-foreground leading-relaxed font-body text-base">
+                <p 
+                  className="font-body"
+                  style={{
+                    fontSize: 'clamp(16px, 1.1vw, 17px)',
+                    lineHeight: 1.75,
+                    color: '#4a453c'
+                  }}
+                >
                   {post.excerpt}
                 </p>
 
                 <a 
                   href="#" 
-                  className="inline-block text-foreground font-medium hover:text-gold transition-colors font-body border-b border-foreground hover:border-gold pb-1"
+                  className="inline-block font-body transition-all"
+                  style={{
+                    fontSize: 'clamp(14px, 1vw, 15px)',
+                    fontWeight: 500,
+                    textDecoration: 'underline',
+                    textUnderlineOffset: '3px',
+                    color: '#2a2721'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.textDecorationThickness = '2px';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.textDecorationThickness = '1px';
+                  }}
                 >
                   READ FULL POST
                 </a>

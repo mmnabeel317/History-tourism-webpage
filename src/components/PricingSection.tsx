@@ -87,8 +87,17 @@ const PricingSection = () => {
               : 'opacity-0 translate-y-16'
           }`}
         >
-          <div className="grid lg:grid-cols-2 gap-8 items-center mb-8">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-foreground leading-tight">
+          <div className="grid lg:grid-cols-2 gap-8 items-start mb-8">
+            <h2 
+              style={{
+                fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                fontWeight: 300,
+                fontSize: 'clamp(28px, 3.2vw, 42px)',
+                lineHeight: 1.15,
+                color: '#1f1c16',
+                maxWidth: '18ch'
+              }}
+            >
               TICKET PRICES & ADMISSIONS
             </h2>
 
@@ -135,7 +144,15 @@ const PricingSection = () => {
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <h3 className="font-display text-2xl font-light text-foreground">
+              <h3 
+                style={{
+                  fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                  fontWeight: 300,
+                  fontSize: 'clamp(24px, 2vw, 30px)',
+                  lineHeight: 1.2,
+                  color: '#1f1c16'
+                }}
+              >
                 {card.title}
               </h3>
               

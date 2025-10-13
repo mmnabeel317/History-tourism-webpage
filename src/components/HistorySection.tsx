@@ -67,7 +67,16 @@ const HistorySection = () => {
                   : 'opacity-0 translate-x-24'
               }`}
             >
-              <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-foreground leading-tight">
+              <h2 
+                style={{
+                  fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                  fontWeight: 300,
+                  fontSize: 'clamp(28px, 3.2vw, 42px)',
+                  lineHeight: 1.15,
+                  color: '#1f1c16',
+                  maxWidth: '18ch'
+                }}
+              >
                 CENTURIES OF LEGEND & POWER
               </h2>
             </div>
@@ -92,7 +101,16 @@ const HistorySection = () => {
               }`}
             >
               <div>
-                <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">
+                <h3 
+                  style={{
+                    fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                    fontWeight: 300,
+                    fontSize: 'clamp(24px, 2vw, 30px)',
+                    lineHeight: 1.2,
+                    color: '#1f1c16',
+                    marginBottom: '12px'
+                  }}
+                >
                   1247 – THE CASTLE IS BORN
                 </h3>
                 <p className="text-muted-foreground leading-relaxed font-body text-base">
@@ -101,7 +119,16 @@ const HistorySection = () => {
               </div>
 
               <div>
-                <h3 className="font-display text-xl md:text-2xl font-medium text-foreground mb-3">
+                <h3 
+                  style={{
+                    fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                    fontWeight: 300,
+                    fontSize: 'clamp(24px, 2vw, 30px)',
+                    lineHeight: 1.2,
+                    color: '#1f1c16',
+                    marginBottom: '12px'
+                  }}
+                >
                   1892 – THE GRAND RESTORATION
                 </h3>
                 <p className="text-muted-foreground leading-relaxed font-body text-base">

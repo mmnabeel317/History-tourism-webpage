@@ -6,6 +6,14 @@
 All colors MUST be HSL.
 */
 
+@font-face {
+  font-family: 'Beatrix Antiqua';
+  src: url('/fonts/beatrix-antiqua.light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   :root {
     /* Backgrounds */
@@ -53,6 +61,16 @@ All colors MUST be HSL.
     --gold: 42 25% 70%;
     --gold-light: 42 30% 80%;
     --gold-dark: 42 30% 60%;
+    
+    /* New color tokens */
+    --gold-hero: 48 75% 81%;
+    --ink: 220 12% 10%;
+    --ink-80: 220 12% 10% / 0.8;
+    --paper: 42 63% 95%;
+    --paper-warm: 42 52% 87%;
+    --wheat: 48 68% 74%;
+    --wheat-hero: 48 67% 71%;
+    --muted-text: 36 8% 63%;
   }
 
   .dark {
@@ -115,8 +133,44 @@ All colors MUST be HSL.
     background-attachment: fixed !important;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
+  h1 {
+    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 7vw, 86px);
+    line-height: 1.0;
+    letter-spacing: 0;
+  }
+  
+  h2 {
+    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 300;
+    font-size: clamp(28px, 3.2vw, 42px);
+    line-height: 1.15;
+    max-width: 24ch;
+  }
+  
+  h3 {
+    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 300;
+    font-size: clamp(24px, 2vw, 30px);
+    line-height: 1.2;
+  }
+  
+  h4, h5, h6 {
+    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-weight: 300;
+  }
+  
+  body {
+    font-size: clamp(16px, 1.1vw, 18px);
+    line-height: 1.6;
+  }
+  
+  .text-meta {
+    font-size: clamp(12px, 0.9vw, 13px);
+    line-height: 1.4;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 }
 

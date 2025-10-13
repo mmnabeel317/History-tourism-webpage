@@ -50,7 +50,16 @@ const VisitSection = () => {
               : 'opacity-0 translate-y-16'
           }`}
           >
-            <h2 className="font-display text-4xl md:text-5xl font-light text-foreground leading-tight">
+            <h2 
+              style={{
+                fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+                fontWeight: 300,
+                fontSize: 'clamp(28px, 3.2vw, 42px)',
+                lineHeight: 1.15,
+                color: '#1f1c16',
+                maxWidth: '16ch'
+              }}
+            >
               PLAN YOUR VISIT
             </h2>
 

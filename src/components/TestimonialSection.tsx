@@ -87,23 +87,39 @@ const TestimonialSection = () => {
               </div>
             </div>
 
-            {/* Navigation Buttons - Gold background with icons */}
+            {/* Navigation Buttons */}
             <div className="absolute -right-16 top-1/2 -translate-y-1/2 flex flex-col gap-4">
               <button 
                 onClick={prevTestimonial}
                 disabled={isTransitioning}
-                className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-primary hover:bg-gold-dark transition-all disabled:opacity-50"
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2"
+                style={{
+                  background: '#111',
+                  border: '1px solid #d6caa0',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+                  outlineColor: 'hsl(var(--gold-hero))'
+                }}
                 aria-label="Previous testimonial"
+                onMouseEnter={(e) => !isTransitioning && (e.currentTarget.style.background = '#151515')}
+                onMouseLeave={(e) => e.currentTarget.style.background = '#111'}
               >
-                <ChevronLeft className="h-6 w-6" />
+                <ChevronLeft className="h-6 w-6" style={{ color: 'hsl(var(--gold-hero))' }} />
               </button>
               <button 
                 onClick={nextTestimonial}
                 disabled={isTransitioning}
-                className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-primary hover:bg-gold-dark transition-all disabled:opacity-50"
+                className="w-11 h-11 rounded-full flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2"
+                style={{
+                  background: '#111',
+                  border: '1px solid #d6caa0',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+                  outlineColor: 'hsl(var(--gold-hero))'
+                }}
                 aria-label="Next testimonial"
+                onMouseEnter={(e) => !isTransitioning && (e.currentTarget.style.background = '#151515')}
+                onMouseLeave={(e) => e.currentTarget.style.background = '#111'}
               >
-                <ChevronRight className="h-6 w-6" />
+                <ChevronRight className="h-6 w-6" style={{ color: 'hsl(var(--gold-hero))' }} />
               </button>
             </div>
           </div>
