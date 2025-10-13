@@ -61,8 +61,10 @@ const TestimonialSection = () => {
       <div className="relative z-10 max-w-[1440px] mx-auto px-8 h-full flex items-center min-h-[600px]">
         <div className="flex items-center justify-end w-full">
           <div className="relative">
-            <div className={`w-full lg:w-[480px] bg-background p-12 shadow-2xl transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
-              <div className="space-y-8">
+            {/* Static white background card */}
+            <div className="w-full lg:w-[480px] bg-background p-12 shadow-2xl">
+              {/* Fading content inside */}
+              <div className={`space-y-8 transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
                 <blockquote className="text-2xl md:text-3xl font-display font-light text-foreground leading-relaxed">
                   "{testimonials[currentIndex].quote}"
                 </blockquote>
@@ -85,23 +87,23 @@ const TestimonialSection = () => {
               </div>
             </div>
 
-            {/* Navigation Buttons - Styled like in screenshot */}
+            {/* Navigation Buttons - Gold background with icons */}
             <div className="absolute -right-16 top-1/2 -translate-y-1/2 flex flex-col gap-4">
               <button 
                 onClick={prevTestimonial}
                 disabled={isTransitioning}
-                className="w-12 h-12 rounded-full border-2 border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-primary transition-all disabled:opacity-50"
+                className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-primary hover:bg-gold-dark transition-all disabled:opacity-50"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="h-5 w-5" />
+                <ChevronLeft className="h-6 w-6" />
               </button>
               <button 
                 onClick={nextTestimonial}
                 disabled={isTransitioning}
-                className="w-12 h-12 rounded-full border-2 border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-primary transition-all disabled:opacity-50"
+                className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-primary hover:bg-gold-dark transition-all disabled:opacity-50"
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="h-5 w-5" />
+                <ChevronRight className="h-6 w-6" />
               </button>
             </div>
           </div>

@@ -86,7 +86,7 @@ const BlogSection = () => {
       <div className="max-w-[1440px] mx-auto">
         <div
           ref={titleRef}
-          className={`mb-16 transition-all duration-[1200ms] ease-out ${
+          className={`mb-16 transition-all duration-[2000ms] ease-out ${
             titleVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -107,7 +107,7 @@ const BlogSection = () => {
             <article
               key={index}
               ref={el => cardsRefs.current[index] = el}
-              className={`group transition-all duration-[1200ms] ease-out hover:scale-[1.02] ${
+              className={`group transition-all duration-[2000ms] ease-out hover:scale-[1.02] ${
                 cardsVisible[index] 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-16'

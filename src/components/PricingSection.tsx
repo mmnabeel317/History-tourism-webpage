@@ -81,7 +81,7 @@ const PricingSection = () => {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         <div
           ref={titleRef}
-          className={`text-center mb-12 space-y-8 transition-all duration-[800ms] ease-out ${
+          className={`text-center mb-12 space-y-8 transition-all duration-[2000ms] ease-out ${
             titleVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -128,7 +128,7 @@ const PricingSection = () => {
           {pricingCards.map((card, index) => (
             <div
               key={index}
-              className={`bg-background border border-border p-8 text-center space-y-6 hover:shadow-xl transition-all hover:-translate-y-2 h-full flex flex-col duration-[1200ms] ${
+              className={`bg-background border border-border p-8 text-center space-y-6 hover:shadow-xl transition-all hover:-translate-y-2 h-full flex flex-col duration-[2000ms] ${
                 cardsVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-16'

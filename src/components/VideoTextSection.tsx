@@ -45,7 +45,7 @@ const VideoTextSection = () => {
           <div className="space-y-12">
             <div
             ref={firstParaRef}
-              className={`transition-all duration-[1200ms] ease-out ${
+              className={`transition-all duration-[2000ms] ease-out ${
                 firstVisible 
                   ? 'opacity-100 translate-x-0' 
                   : 'opacity-0 -translate-x-24'
@@ -61,7 +61,7 @@ const VideoTextSection = () => {
             
             <div
             ref={secondParaRef}
-              className={`space-y-4 transition-all duration-[1200ms] ease-out delay-300 ${
+              className={`space-y-4 transition-all duration-[2000ms] ease-out delay-300 ${
                 secondVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 translate-y-12'

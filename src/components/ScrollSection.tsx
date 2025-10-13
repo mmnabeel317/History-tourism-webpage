@@ -51,7 +51,7 @@ const ScrollSection = ({
   return (
     <div
       ref={sectionRef}
-      className={`transition-all duration-[1200ms] ease-out ${animationClass} ${className}`}
+      className={`transition-all duration-[2000ms] ease-out ${animationClass} ${className}`}
       style={{
         transitionDelay: `${delay}ms`
       }}
