@@ -61,8 +61,8 @@ const HeroSection = () => {
       <div 
         className="absolute left-0 top-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: 'clamp(400px, 50vh, 600px)',
-          transform: `translateY(${scrollY * 0.5}%)`,
+          height: 'clamp(350px, 42vh, 500px)',
+          transform: `translateY(${scrollY * 0.2}%)`,
           transition: 'transform 0.1s ease-out'
         }}
       >
@@ -78,8 +78,8 @@ const HeroSection = () => {
       <div 
         className="absolute left-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: 'clamp(400px, 50vh, 600px)',
-          transform: `translateY(${-scrollY * 0.5}%) scaleY(-1)`,
+          height: 'clamp(350px, 42vh, 500px)',
+          transform: `translateY(${-scrollY * 0.2}%) scaleY(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
       >
@@ -95,8 +95,8 @@ const HeroSection = () => {
       <div 
         className="absolute right-0 top-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: 'clamp(400px, 50vh, 600px)',
-          transform: `translateY(${scrollY * 0.5}%) scaleX(-1)`,
+          height: 'clamp(350px, 42vh, 500px)',
+          transform: `translateY(${scrollY * 0.2}%) scaleX(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
       >
@@ -112,8 +112,8 @@ const HeroSection = () => {
       <div 
         className="absolute right-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: 'clamp(400px, 50vh, 600px)',
-          transform: `translateY(${-scrollY * 0.5}%) scaleX(-1) scaleY(-1)`,
+          height: 'clamp(350px, 42vh, 500px)',
+          transform: `translateY(${-scrollY * 0.2}%) scaleX(-1) scaleY(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
       >
@@ -132,12 +132,12 @@ const HeroSection = () => {
           style={{ 
             fontFamily: "'Playfair Display', 'Georgia', 'Times New Roman', serif",
             fontWeight: 300,
-            fontSize: titleScale === 1.5 ? 'clamp(3rem, 10vw, 10rem)' : 'clamp(48px, 7vw, 86px)',
-            lineHeight: 1.0,
+            fontSize: titleScale === 1.5 ? 'clamp(3rem, 10vw, 10rem)' : 'clamp(42px, 6vw, 72px)',
+            lineHeight: 1.1,
             letterSpacing: 0,
             color: '#f0e7af',
             textShadow: '0 1px 0 rgba(0,0,0,0.25)',
-            maxWidth: window.innerWidth >= 1280 ? '12ch' : window.innerWidth >= 768 ? '11ch' : '14ch',
+            maxWidth: '18ch',
             transform: `scale(${titleScale})`,
             transformOrigin: 'center'
           }}
