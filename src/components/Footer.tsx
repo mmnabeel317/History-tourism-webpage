@@ -45,7 +45,7 @@ const Footer = () => {
         {/* Top Section: Three columns on black */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.5fr_1fr] gap-0">
           {/* Left - HISTORY Logo */}
-          <div className="py-16 px-8 flex items-center justify-center">
+          <div className="py-12 px-8 flex items-center justify-center">
             <div className="flex items-center gap-2">
               <Building2 className="h-8 w-8" style={{ color: '#f0e7af' }} />
               <span className="text-2xl font-display font-light tracking-wider" style={{ color: '#f0e7af' }}>
@@ -55,14 +55,14 @@ const Footer = () => {
           </div>
 
           {/* Center - Tagline */}
-          <div className="py-16 px-8 flex items-center justify-center">
+          <div className="py-12 px-8 flex items-center justify-center">
             <p className="text-center leading-relaxed font-body max-w-md text-white">
               Whether you're drawn by history, mystery, or breathtaking views, we welcome you to step back in time.
             </p>
           </div>
 
           {/* Right - Navigation Links and Social Icons */}
-          <div className="py-16 px-8 flex items-center justify-center">
+          <div className="py-12 px-8 flex items-center justify-center">
             <div className="flex items-center gap-8">
               <div className="grid grid-cols-2 gap-x-12 gap-y-3">
                 <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
@@ -114,10 +114,12 @@ const Footer = () => {
         </div>
 
         {/* Divider Line */}
-        <div className="border-t border-white/20" />
+        <div className="px-8">
+          <div className="border-t border-white/20" />
+        </div>
 
         {/* Location Section */}
-        <div className="py-20 md:py-32 px-8">
+        <div className="py-16 md:py-20 px-8">
           <div className="grid lg:grid-cols-[1fr,1fr] gap-12 items-start">
             {/* Left - Map */}
             <div
