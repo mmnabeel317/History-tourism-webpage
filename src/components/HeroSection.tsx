@@ -57,11 +57,12 @@ const HeroSection = () => {
       </div>
 
       {/* Border Ornaments - Left and Right - Flush to edges */}
-      {/* Left ornament - full height */}
+      {/* Left ornament - top */}
       <div 
-        className="absolute left-0 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:block"
+        className="absolute left-0 top-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          maxHeight: '1100px',
+          height: '46vh',
+          maxHeight: '550px',
           transform: `translateY(${scrollY * 0.5}%)`,
           transition: 'transform 0.1s ease-out'
         }}
@@ -69,16 +70,35 @@ const HeroSection = () => {
         <img 
           src={ornament} 
           alt="" 
-          className="h-[92vh] max-h-[1100px] w-auto object-contain opacity-100"
+          className="h-full w-auto object-contain opacity-100"
+          style={{ paddingLeft: '8px' }}
+        />
+      </div>
+
+      {/* Left ornament - bottom (rotated 180deg so flowers face inward) */}
+      <div 
+        className="absolute left-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
+        style={{ 
+          height: '46vh',
+          maxHeight: '550px',
+          transform: `translateY(${-scrollY * 0.5}%) rotate(180deg)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <img 
+          src={ornament} 
+          alt="" 
+          className="h-full w-auto object-contain opacity-100"
           style={{ paddingLeft: '8px' }}
         />
       </div>
       
-      {/* Right ornament - full height, mirrored */}
+      {/* Right ornament - top, mirrored */}
       <div 
-        className="absolute right-0 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:block"
+        className="absolute right-0 top-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          maxHeight: '1100px',
+          height: '46vh',
+          maxHeight: '550px',
           transform: `translateY(${scrollY * 0.5}%) scaleX(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
@@ -86,7 +106,25 @@ const HeroSection = () => {
         <img 
           src={ornament} 
           alt="" 
-          className="h-[92vh] max-h-[1100px] w-auto object-contain opacity-100"
+          className="h-full w-auto object-contain opacity-100"
+          style={{ paddingRight: '8px' }}
+        />
+      </div>
+
+      {/* Right ornament - bottom, mirrored and rotated 180deg so flowers face inward */}
+      <div 
+        className="absolute right-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
+        style={{ 
+          height: '46vh',
+          maxHeight: '550px',
+          transform: `translateY(${-scrollY * 0.5}%) scaleX(-1) rotate(180deg)`,
+          transition: 'transform 0.1s ease-out'
+        }}
+      >
+        <img 
+          src={ornament} 
+          alt="" 
+          className="h-full w-auto object-contain opacity-100"
           style={{ paddingRight: '8px' }}
         />
       </div>
