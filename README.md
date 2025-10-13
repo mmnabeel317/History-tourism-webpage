@@ -89,20 +89,124 @@ pnpm preview
 ```
 historical-tourism-webpage/
 ├── src/
-│   ├── components/       # React components
-│   ├── lib/             # Utility functions and helpers
-│   ├── hooks/           # Custom React hooks
-│   ├── pages/           # Page components
-│   ├── assets/          # Static assets (images, fonts, etc.)
-│   ├── App.tsx          # Main App component
-│   └── main.tsx         # Application entry point
-├── public/              # Public static files
-├── index.html           # HTML template
-├── package.json         # Project dependencies
-├── tsconfig.json        # TypeScript configuration
-├── vite.config.ts       # Vite configuration
-├── tailwind.config.ts   # Tailwind CSS configuration
-└── README.md           # Project documentation
+│ ├── components/ # React components
+│ │ ├── BlogSection.tsx
+│ │ ├── Footer.tsx
+│ │ ├── GallerySection.tsx
+│ │ ├── Header.tsx
+│ │ ├── HeroSection.tsx
+│ │ ├── HistorySection.tsx
+│ │ ├── LocationSection.tsx
+│ │ ├── PricingSection.tsx
+│ │ ├── ScrollSection.tsx
+│ │ ├── TestimonialSection.tsx
+│ │ ├── VideoTextSection.tsx
+│ │ └── VisitSection.tsx
+│ │
+│ │ └── ui/ # Small UI primitives and shared components
+│ │ ├── accordion.tsx
+│ │ ├── alert-dialog.tsx
+│ │ ├── alert.tsx
+│ │ ├── aspect-ratio.tsx
+│ │ ├── avatar.tsx
+│ │ ├── badge.tsx
+│ │ ├── breadcrumb.tsx
+│ │ ├── button.tsx
+│ │ ├── calendar.tsx
+│ │ ├── card.tsx
+│ │ ├── carousel.tsx
+│ │ ├── chart.tsx
+│ │ ├── checkbox.tsx
+│ │ ├── collapsible.tsx
+│ │ ├── command.tsx
+│ │ ├── context-menu.tsx
+│ │ ├── dialog.tsx
+│ │ ├── drawer.tsx
+│ │ ├── dropdown-menu.tsx
+│ │ ├── form.tsx
+│ │ ├── hover-card.tsx
+│ │ ├── input-otp.tsx
+│ │ ├── input.tsx
+│ │ ├── label.tsx
+│ │ ├── menubar.tsx
+│ │ ├── navigation-menu.tsx
+│ │ ├── pagination.tsx
+│ │ ├── popover.tsx
+│ │ ├── progress.tsx
+│ │ ├── radio-group.tsx
+│ │ ├── resizable.tsx
+│ │ ├── scroll-area.tsx
+│ │ ├── select.tsx
+│ │ ├── separator.tsx
+│ │ ├── sheet.tsx
+│ │ ├── sidebar.tsx
+│ │ ├── skeleton.tsx
+│ │ ├── slider.tsx
+│ │ ├── sonner.tsx
+│ │ ├── switch.tsx
+│ │ ├── table.tsx
+│ │ ├── tabs.tsx
+│ │ ├── textarea.tsx
+│ │ ├── toast.tsx
+│ │ ├── toaster.tsx
+│ │ ├── toggle-group.tsx
+│ │ ├── toggle.tsx
+│ │ ├── tooltip.tsx
+│ │ └── use-toast.ts
+│ │
+│ ├── lib/ # Utility functions and helpers
+│ │ └── utils.ts
+│ │
+│ ├── hooks/ # Custom React hooks
+│ │ ├── use-mobile.tsx
+│ │ └── use-toast.ts
+│ │
+│ ├── pages/ # Page components
+│ │ ├── Index.tsx
+│ │ └── NotFound.tsx
+│ │
+│ ├── assets/ # Static assets (images, fonts, etc.)
+│ │ ├── castle-archway.jpg
+│ │ ├── castle-aerial.jpg
+│ │ ├── castle-bridge.jpg
+│ │ ├── castle-courtyard.jpg
+│ │ ├── castle-hallway.jpg
+│ │ ├── castle-library.jpg
+│ │ ├── castle-painting.jpg
+│ │ ├── castle-pathway.jpg
+│ │ ├── crown.jpg
+│ │ ├── guard.jpg
+│ │ ├── hero-castle.jpg
+│ │ ├── neuschwanstein.jpg
+│ │ ├── reference-scroll3.png
+│ │ ├── side_flower_artifact.svg
+│ │ ├── stained-glass.jpg
+│ │ └── tree-pathway.jpg
+│ │
+│ ├── App.tsx # Main App component
+│ ├── App.css
+│ ├── index.css
+│ ├── main.tsx # Application entry point
+│ └── vite-env.d.ts
+│
+├── public/ # Public static files
+│ ├── favicon.ico
+│ ├── placeholder.svg
+│ └── robots.txt
+│
+├── index.html # HTML template
+├── package.json # Project dependencies
+├── package-lock.json # Lockfile
+├── bun.lockb # Bun lockfile (if using bun)
+├── components.json # Component metadata
+├── postcss.config.js
+├── eslint.config.js
+├── tsconfig.json # TypeScript configuration
+├── tsconfig.app.json
+├── tsconfig.node.json
+├── vite.config.ts # Vite configuration
+├── tailwind.config.ts # Tailwind CSS configuration
+└── README.md # Project documentation
 ```
 
 ## 🎨 Styling
