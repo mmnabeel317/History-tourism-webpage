@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import castleBridge from '@/assets/castle-bridge.jpg';
 
@@ -25,66 +25,84 @@ const testimonials = [
 
 const TestimonialSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      setIsTransitioning(false);
+    }, 300);
   };
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden">
-      {/* Background Image */}
+    <section className="relative py-20 md:py-32 overflow-hidden min-h-[600px]">
+      {/* Background Image - Fixed size */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${castleBridge})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ 
+          backgroundImage: `url(${castleBridge})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1440px] mx-auto px-8 h-full flex items-center">
+      <div className="relative z-10 max-w-[1440px] mx-auto px-8 h-full flex items-center min-h-[600px]">
         <div className="flex items-center justify-end w-full">
-          <div className="w-full lg:w-[480px] bg-background p-12 shadow-2xl">
-            <div className="space-y-8">
-              <blockquote className="text-2xl md:text-3xl font-display font-light text-foreground leading-relaxed">
-                "{testimonials[currentIndex].quote}"
-              </blockquote>
+          <div className="relative">
+            <div className={`w-full lg:w-[480px] bg-background p-12 shadow-2xl transition-opacity duration-300 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
+              <div className="space-y-8">
+                <blockquote className="text-2xl md:text-3xl font-display font-light text-foreground leading-relaxed">
+                  "{testimonials[currentIndex].quote}"
+                </blockquote>
 
-              <div className="flex items-center gap-4">
-                <img 
-                  src={testimonials[currentIndex].avatar}
-                  alt={testimonials[currentIndex].name}
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-                <div>
-                  <p className="font-display text-xl font-medium text-foreground">
-                    {testimonials[currentIndex].name}
-                  </p>
-                  <p className="text-muted-foreground font-body">
-                    {testimonials[currentIndex].location}
-                  </p>
+                <div className="flex items-center gap-4">
+                  <img 
+                    src={testimonials[currentIndex].avatar}
+                    alt={testimonials[currentIndex].name}
+                    className="w-16 h-16 rounded-full object-cover"
+                  />
+                  <div>
+                    <p className="font-display text-xl font-medium text-foreground">
+                      {testimonials[currentIndex].name}
+                    </p>
+                    <p className="text-muted-foreground font-body">
+                      {testimonials[currentIndex].location}
+                    </p>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <div className="absolute -right-4 top-1/2 -translate-y-1/2 flex flex-col gap-4">
-                <button 
-                  onClick={prevTestimonial}
-                  className="p-3 bg-gold text-foreground hover:bg-gold/90 transition-all hover:scale-105"
-                  aria-label="Previous testimonial"
-                >
-                  <ChevronLeft className="h-6 w-6" />
-                </button>
-                <button 
-                  onClick={nextTestimonial}
-                  className="p-3 bg-gold text-foreground hover:bg-gold/90 transition-all hover:scale-105"
-                  aria-label="Next testimonial"
-                >
-                  <ChevronRight className="h-6 w-6" />
-                </button>
-              </div>
+            {/* Navigation Buttons - Styled like in screenshot */}
+            <div className="absolute -right-16 top-1/2 -translate-y-1/2 flex flex-col gap-4">
+              <button 
+                onClick={prevTestimonial}
+                disabled={isTransitioning}
+                className="w-12 h-12 rounded-full border-2 border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-primary transition-all disabled:opacity-50"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button 
+                onClick={nextTestimonial}
+                disabled={isTransitioning}
+                className="w-12 h-12 rounded-full border-2 border-gold flex items-center justify-center text-gold hover:bg-gold hover:text-primary transition-all disabled:opacity-50"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
