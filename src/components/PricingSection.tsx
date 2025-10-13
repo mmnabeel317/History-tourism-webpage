@@ -81,7 +81,7 @@ const PricingSection = () => {
       <div className="relative z-10 max-w-[1440px] mx-auto">
         <div
           ref={titleRef}
-          className={`text-center mb-12 space-y-8 transition-all duration-[2000ms] ease-out ${
+          className={`mb-12 space-y-8 transition-all duration-[2000ms] ease-out ${
             titleVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-16'
@@ -106,27 +106,29 @@ const PricingSection = () => {
             </p>
           </div>
 
-          <div className="inline-flex rounded-full bg-secondary p-1">
-            <button
-              onClick={() => setActiveTab('ticket')}
-              className={`px-8 py-3 rounded-full transition-all font-body font-medium ${
-                activeTab === 'ticket'
-                  ? 'bg-gold text-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Ticket
-            </button>
-            <button
-              onClick={() => setActiveTab('membership')}
-              className={`px-8 py-3 rounded-full transition-all font-body font-medium ${
-                activeTab === 'membership'
-                  ? 'bg-gold text-foreground'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              Membership
-            </button>
+          <div className="flex justify-start">
+            <div className="inline-flex rounded-full bg-muted p-1">
+              <button
+                onClick={() => setActiveTab('ticket')}
+                className={`px-8 py-3 rounded-full transition-all font-body font-medium ${
+                  activeTab === 'ticket'
+                    ? 'bg-[#f0e7af] text-foreground'
+                    : 'bg-muted text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Ticket
+              </button>
+              <button
+                onClick={() => setActiveTab('membership')}
+                className={`px-8 py-3 rounded-full transition-all font-body font-medium ${
+                  activeTab === 'membership'
+                    ? 'bg-[#f0e7af] text-foreground'
+                    : 'bg-muted text-muted-foreground hover:text-foreground'
+                }`}
+              >
+                Membership
+              </button>
+            </div>
           </div>
         </div>
 

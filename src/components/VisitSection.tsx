@@ -81,10 +81,35 @@ const VisitSection = () => {
             }`}
           >
             <div className="relative bg-primary text-primary-foreground p-12 rounded-lg">
-              <Sparkles className="absolute top-6 left-6 h-8 w-8 text-gold" />
-              <Sparkles className="absolute top-6 right-6 h-8 w-8 text-gold" />
-              <Sparkles className="absolute bottom-6 left-6 h-8 w-8 text-gold" />
-              <Sparkles className="absolute bottom-6 right-6 h-8 w-8 text-gold" />
+              {/* Corner artifacts using reference scroll image pattern */}
+              <div className="absolute top-4 left-4 w-12 h-12">
+                <svg viewBox="0 0 40 40" className="w-full h-full text-gold">
+                  <circle cx="5" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="15" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="5" cy="15" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <div className="absolute top-4 right-4 w-12 h-12 rotate-90">
+                <svg viewBox="0 0 40 40" className="w-full h-full text-gold">
+                  <circle cx="5" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="15" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="5" cy="15" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <div className="absolute bottom-4 left-4 w-12 h-12 -rotate-90">
+                <svg viewBox="0 0 40 40" className="w-full h-full text-gold">
+                  <circle cx="5" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="15" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="5" cy="15" r="2" fill="currentColor"/>
+                </svg>
+              </div>
+              <div className="absolute bottom-4 right-4 w-12 h-12 rotate-180">
+                <svg viewBox="0 0 40 40" className="w-full h-full text-gold">
+                  <circle cx="5" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="15" cy="5" r="2" fill="currentColor"/>
+                  <circle cx="5" cy="15" r="2" fill="currentColor"/>
+                </svg>
+              </div>
 
               <div className="text-center space-y-8">
                 <p className="text-background-cream text-base font-body">
@@ -96,7 +121,7 @@ const VisitSection = () => {
                     <p className="text-gold-light text-sm mb-2 font-body">
                       Jan - Feb - Mar - Oct - Nov - Dec
                     </p>
-                    <p className="text-5xl font-display font-light">
+                    <p className="text-5xl font-display font-light" style={{ color: '#f0e7af' }}>
                       9:00 – 20:00
                     </p>
                   </div>
@@ -105,7 +130,7 @@ const VisitSection = () => {
                     <p className="text-gold-light text-sm mb-2 font-body">
                       April - May - June - July - Aug - Sept
                     </p>
-                    <p className="text-5xl font-display font-light">
+                    <p className="text-5xl font-display font-light" style={{ color: '#f0e7af' }}>
                       8:00 – 22:00
                     </p>
                   </div>

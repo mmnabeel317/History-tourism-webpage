@@ -83,6 +83,23 @@ const VideoTextSection = () => {
                 alt="Aerial view of castle grounds"
                 className="w-full h-[500px] object-cover"
               />
+              {/* Text overlay on image */}
+              <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center p-8 text-center">
+                <div className="bg-[#f0e7af] px-8 py-4 mb-6">
+                  <h3 
+                    className="font-display text-2xl md:text-3xl font-light"
+                    style={{ color: '#111318' }}
+                  >
+                    YOUR JOURNEY THROUGH TIME BEGINS
+                  </h3>
+                </div>
+                <p 
+                  className="font-body text-base md:text-lg leading-relaxed max-w-[50ch]"
+                  style={{ color: '#f0e7af' }}
+                >
+                  Discover how knights, nobles, and servants lived within the castle's towering walls during its golden age. We welcome you to step back in time.
+                </p>
+              </div>
             </div>
           </div>
         </div>

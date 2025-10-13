@@ -57,31 +57,64 @@ const HeroSection = () => {
       </div>
 
       {/* Border Ornaments - Left and Right */}
-      <div 
-        className="absolute left-2 md:left-3 top-0 h-[92vh] max-h-[1100px] w-auto pointer-events-none z-[5] hidden md:block lg:opacity-100 md:opacity-70"
-        style={{ 
-          transform: `translateY(${scrollY * 0.005}%)`,
-          transition: 'transform 0.1s ease-out'
-        }}
-      >
-        <img 
-          src={ornament} 
-          alt="" 
-          className="h-full w-auto object-contain"
-        />
+      {/* Left ornaments - stacked vertically */}
+      <div className="absolute left-2 md:left-3 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:flex md:flex-col lg:opacity-100 md:opacity-70">
+        <div 
+          className="h-[46vh] md:h-[46vh] w-auto"
+          style={{ 
+            transform: `translateY(${scrollY * 0.005}%)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        >
+          <img 
+            src={ornament} 
+            alt="" 
+            className="h-full w-auto object-contain"
+          />
+        </div>
+        <div 
+          className="h-[46vh] md:h-[46vh] w-auto"
+          style={{ 
+            transform: `translateY(${scrollY * 0.005}%) rotate(180deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        >
+          <img 
+            src={ornament} 
+            alt="" 
+            className="h-full w-auto object-contain"
+          />
+        </div>
       </div>
-      <div 
-        className="absolute right-2 md:right-3 top-0 h-[92vh] max-h-[1100px] w-auto pointer-events-none z-[5] hidden md:block lg:opacity-100 md:opacity-70"
-        style={{ 
-          transform: `translateY(${scrollY * 0.005}%) scaleX(-1)`,
-          transition: 'transform 0.1s ease-out'
-        }}
-      >
-        <img 
-          src={ornament} 
-          alt="" 
-          className="h-full w-auto object-contain"
-        />
+      
+      {/* Right ornaments - stacked vertically and mirrored */}
+      <div className="absolute right-2 md:right-3 top-0 h-screen w-auto pointer-events-none z-[5] hidden md:flex md:flex-col lg:opacity-100 md:opacity-70">
+        <div 
+          className="h-[46vh] md:h-[46vh] w-auto"
+          style={{ 
+            transform: `translateY(${scrollY * 0.005}%) scaleX(-1)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        >
+          <img 
+            src={ornament} 
+            alt="" 
+            className="h-full w-auto object-contain"
+          />
+        </div>
+        <div 
+          className="h-[46vh] md:h-[46vh] w-auto"
+          style={{ 
+            transform: `translateY(${scrollY * 0.005}%) scaleX(-1) rotate(180deg)`,
+            transition: 'transform 0.1s ease-out'
+          }}
+        >
+          <img 
+            src={ornament} 
+            alt="" 
+            className="h-full w-auto object-contain"
+          />
+        </div>
       </div>
 
       {/* Content */}
@@ -94,9 +127,9 @@ const HeroSection = () => {
             fontSize: titleScale === 1.5 ? 'clamp(3rem, 10vw, 10rem)' : 'clamp(48px, 7vw, 86px)',
             lineHeight: 1.0,
             letterSpacing: 0,
-            color: 'hsl(var(--gold-hero))',
+            color: '#f0e7af',
             textShadow: '0 1px 0 rgba(0,0,0,0.25)',
-            maxWidth: window.innerWidth >= 1280 ? '16ch' : window.innerWidth >= 768 ? '13ch' : '12ch',
+            maxWidth: window.innerWidth >= 1280 ? '18ch' : window.innerWidth >= 768 ? '16ch' : '14ch',
             transform: `scale(${titleScale})`,
             transformOrigin: 'center'
           }}
@@ -109,7 +142,7 @@ const HeroSection = () => {
             fontSize: '18px',
             lineHeight: 1.6,
             fontWeight: 400,
-            color: 'rgba(255,255,255,0.82)'
+            color: '#f0e7af'
           }}
         >
           Discover how knights, nobles, and servants lived within the castle's towering walls during its golden age. We welcome you to step back in time.

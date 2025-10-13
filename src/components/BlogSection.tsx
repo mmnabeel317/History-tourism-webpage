@@ -181,14 +181,16 @@ const BlogSection = () => {
               </div>
 
               <div className="p-8 space-y-4 bg-background">
-                <p 
-                  className="font-body text-meta"
-                  style={{ color: '#7a7368' }}
-                >
-                  {post.date}
-                </p>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <p 
+                    className="font-body text-meta"
+                    style={{ color: '#7a7368' }}
+                  >
+                    {post.date}
+                  </p>
+                </div>
 
-                <h3 
+                <h3
                   style={{
                     fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
                     fontWeight: 300,
