@@ -91,11 +91,11 @@ const TestimonialSection = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex flex-col gap-0 h-full self-stretch">
+            <div className="flex flex-col gap-0">
               <button 
                 onClick={prevTestimonial}
                 disabled={isTransitioning}
-                className="w-[80px] flex-1 flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-t border-r border-gold"
+                className="w-[80px] h-[100px] flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-t border-r border-gold"
                 style={{
                   background: 'hsl(var(--gold))',
                   outlineColor: 'hsl(var(--gold))'
@@ -107,7 +107,7 @@ const TestimonialSection = () => {
               <button 
                 onClick={nextTestimonial}
                 disabled={isTransitioning}
-                className="w-[80px] flex-1 flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-b border-r border-gold"
+                className="w-[80px] h-[100px] flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-b border-r border-gold"
                 style={{
                   background: 'hsl(var(--gold))',
                   outlineColor: 'hsl(var(--gold))'
