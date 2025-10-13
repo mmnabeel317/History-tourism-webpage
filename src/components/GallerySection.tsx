@@ -50,7 +50,7 @@ const GallerySection = () => {
         className="w-full lg:w-[40%] flex flex-col"
       >
         {/* Top: Photo with text overlay */}
-        <div className="relative h-[40vh] lg:h-[50vh] overflow-hidden lg:flex-1">
+        <div className="relative h-[40vh] overflow-hidden flex-1">
           <img 
             src={castleCourtyard}
             alt="Castle courtyard archway"
@@ -77,7 +77,7 @@ const GallerySection = () => {
         </div>
 
         {/* Bottom: Yellow section with headline and button */}
-        <div className="flex-1 bg-[#f0e7af] flex items-center px-8 md:px-12 py-12 lg:py-16">
+        <div className="flex-1 bg-[#f0e7af] flex items-center px-8 md:px-12 py-12">
           <div
             className={`space-y-6 transition-all duration-[1200ms] ease-out delay-200 ${
               leftVisible 

@@ -61,8 +61,7 @@ const HeroSection = () => {
       <div 
         className="absolute left-0 top-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: '52vh',
-          maxHeight: '650px',
+          height: 'clamp(400px, 50vh, 600px)',
           transform: `translateY(${scrollY * 0.5}%)`,
           transition: 'transform 0.1s ease-out'
         }}
@@ -79,8 +78,7 @@ const HeroSection = () => {
       <div 
         className="absolute left-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: '52vh',
-          maxHeight: '650px',
+          height: 'clamp(400px, 50vh, 600px)',
           transform: `translateY(${-scrollY * 0.5}%) scaleY(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
@@ -97,8 +95,7 @@ const HeroSection = () => {
       <div 
         className="absolute right-0 top-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: '52vh',
-          maxHeight: '650px',
+          height: 'clamp(400px, 50vh, 600px)',
           transform: `translateY(${scrollY * 0.5}%) scaleX(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
@@ -115,8 +112,7 @@ const HeroSection = () => {
       <div 
         className="absolute right-0 bottom-0 w-auto pointer-events-none z-[5] hidden md:block"
         style={{ 
-          height: '52vh',
-          maxHeight: '650px',
+          height: 'clamp(400px, 50vh, 600px)',
           transform: `translateY(${-scrollY * 0.5}%) scaleX(-1) scaleY(-1)`,
           transition: 'transform 0.1s ease-out'
         }}
@@ -141,7 +137,7 @@ const HeroSection = () => {
             letterSpacing: 0,
             color: '#f0e7af',
             textShadow: '0 1px 0 rgba(0,0,0,0.25)',
-            maxWidth: window.innerWidth >= 1280 ? '14ch' : window.innerWidth >= 768 ? '12ch' : '14ch',
+            maxWidth: window.innerWidth >= 1280 ? '12ch' : window.innerWidth >= 768 ? '11ch' : '14ch',
             transform: `scale(${titleScale})`,
             transformOrigin: 'center'
           }}
@@ -149,7 +145,7 @@ const HeroSection = () => {
           A FORTRESS OF LEGENDS, HISTORY & MYSTERY
         </h1>
         <p 
-          className="font-body max-w-[48ch]"
+          className="font-body max-w-[42ch]"
           style={{
             fontSize: '18px',
             lineHeight: 1.6,
