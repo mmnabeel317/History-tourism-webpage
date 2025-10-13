@@ -89,7 +89,7 @@ const HeroSection = () => {
         <h1 
           className="mb-6 transition-all duration-[800ms] ease-out"
           style={{ 
-            fontFamily: "'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif",
+            fontFamily: "'Playfair Display', 'Georgia', 'Times New Roman', serif",
             fontWeight: 300,
             fontSize: titleScale === 1.5 ? 'clamp(3rem, 10vw, 10rem)' : 'clamp(48px, 7vw, 86px)',
             lineHeight: 1.0,

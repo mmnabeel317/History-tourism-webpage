@@ -6,13 +6,7 @@
 All colors MUST be HSL.
 */
 
-@font-face {
-  font-family: 'Beatrix Antiqua';
-  src: url('/fonts/beatrix-antiqua.light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+/* Using Playfair Display from Google Fonts as the primary heading font */
 
 @layer base {
   :root {
@@ -134,7 +128,7 @@ All colors MUST be HSL.
   }
 
   h1 {
-    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
     font-weight: 300;
     font-size: clamp(48px, 7vw, 86px);
     line-height: 1.0;
@@ -142,7 +136,7 @@ All colors MUST be HSL.
   }
   
   h2 {
-    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
     font-weight: 300;
     font-size: clamp(28px, 3.2vw, 42px);
     line-height: 1.15;
@@ -150,14 +144,14 @@ All colors MUST be HSL.
   }
   
   h3 {
-    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
     font-weight: 300;
     font-size: clamp(24px, 2vw, 30px);
     line-height: 1.2;
   }
   
   h4, h5, h6 {
-    font-family: 'Beatrix Antiqua', 'Playfair Display', 'Times New Roman', serif;
+    font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
     font-weight: 300;
   }
   
