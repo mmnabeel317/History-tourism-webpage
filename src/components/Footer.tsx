@@ -1,5 +1,6 @@
-import { Building2, MapPin } from 'lucide-react';
+import { Building2, MapPin, Facebook, Instagram } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
   const section1Ref = useRef<HTMLDivElement>(null);
@@ -60,30 +61,60 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Right - Navigation Links */}
+          {/* Right - Navigation Links and Social Icons */}
           <div className="py-16 px-8 flex items-center justify-center">
-            <div className="grid grid-cols-2 gap-x-12 gap-y-3">
-              <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                Home 1
-              </a>
-              <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                About us
-              </a>
-              <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                Home 2
-              </a>
-              <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                Pricing
-              </a>
-              <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                Home 3
-              </a>
-              <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
-                Contact us
-              </a>
+            <div className="flex items-center gap-8">
+              <div className="grid grid-cols-2 gap-x-12 gap-y-3">
+                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+                  Home 1
+                </a>
+                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+                  About us
+                </a>
+                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+                  Home 2
+                </a>
+                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+                  Pricing
+                </a>
+                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+                  Home 3
+                </a>
+                <a href="#" className="hover:opacity-80 transition-colors font-body" style={{ color: '#f0e7af' }}>
+                  Contact us
+                </a>
+              </div>
+              
+              {/* Social Media Icons */}
+              <div className="flex items-center gap-3">
+                <a 
+                  href="#" 
+                  className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-5 w-5" style={{ color: '#f0e7af' }} />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5" style={{ color: '#f0e7af' }} />
+                </a>
+                <a 
+                  href="#" 
+                  className="w-10 h-10 rounded-full border border-[#f0e7af] flex items-center justify-center hover:bg-[#f0e7af]/10 transition-colors"
+                  aria-label="X (Twitter)"
+                >
+                  <FaXTwitter className="h-5 w-5" style={{ color: '#f0e7af' }} />
+                </a>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Divider Line */}
+        <div className="border-t border-white/20" />
 
         {/* Location Section */}
         <div className="py-20 md:py-32 px-8">
