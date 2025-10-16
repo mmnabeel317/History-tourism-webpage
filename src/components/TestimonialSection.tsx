@@ -60,9 +60,9 @@ const TestimonialSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-[1440px] mx-auto px-8 h-full flex items-center min-h-[600px]">
         <div className="flex items-center justify-end w-full">
-          <div className="flex items-center gap-0">
+          <div className="flex items-stretch shadow-2xl">
             {/* Static white background card */}
-            <div className="w-full lg:w-[520px] bg-background p-16 shadow-2xl">
+            <div className="w-full lg:w-[520px] bg-background p-16">
               {/* Fading content inside */}
               <div className={`space-y-8 transition-opacity duration-500 ${isTransitioning ? 'opacity-0' : 'opacity-100'}`}>
                 <blockquote 
@@ -91,30 +91,30 @@ const TestimonialSection = () => {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="flex flex-col gap-0">
+            <div className="flex flex-col">
               <button 
                 onClick={prevTestimonial}
                 disabled={isTransitioning}
-                className="w-[80px] h-[100px] flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-t border-r border-gold"
+                className="group w-[80px] flex-1 flex items-center justify-center transition-all disabled:opacity-50 focus-visible:outline focus-visible:outline-2"
                 style={{
                   background: 'hsl(var(--gold))',
                   outlineColor: 'hsl(var(--gold))'
                 }}
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="h-8 w-8 text-primary" />
+                <ChevronLeft className="h-8 w-8 text-primary transition-transform duration-300 group-hover:-translate-x-1" />
               </button>
               <button 
                 onClick={nextTestimonial}
                 disabled={isTransitioning}
-                className="w-[80px] h-[100px] flex items-center justify-center transition-all active:translate-y-px disabled:opacity-50 focus-visible:outline focus-visible:outline-2 border-l border-b border-r border-gold"
+                className="group w-[80px] flex-1 flex items-center justify-center transition-all disabled:opacity-50 focus-visible:outline focus-visible:outline-2"
                 style={{
                   background: 'hsl(var(--gold))',
                   outlineColor: 'hsl(var(--gold))'
                 }}
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="h-8 w-8 text-primary" />
+                <ChevronRight className="h-8 w-8 text-primary transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </div>
           </div>
