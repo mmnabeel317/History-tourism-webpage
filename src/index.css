@@ -112,6 +112,11 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground font-body antialiased;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  html {
+    overflow-x: hidden;
   }
 
   /* Apply star background globally to all sections */
